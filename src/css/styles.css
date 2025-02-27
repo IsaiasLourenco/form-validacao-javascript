@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+html {
+    background-image: url('../images/bg-repeat.jpg');
+    background-repeat: repeat;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 800px;
+    height: 402px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 10px;
+}
+
+.container .duvida {
+    width: 300px;
+    height: 111px;
+    display: block;
+    align-items: center;
+}
+
+.container .duvida h1 {
+    font-size: 20px;
+    font-weight: 900;
+    color: #FFFFFF;
+}
+
+.container .duvida h2 {
+    font-size: 15px;
+    font-weight: 400;
+    color: #FFFFFF;
+    margin-top: 10px;
+}
+
+.container .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFFFFF;
+    width: 340px;
+    height: 378px;
+}
+
+.container .form .nome {
+    font-size: 15px;
+    width: 85%;
+}
+
+.container .form .email {
+    font-size: 15px;
+    width: 85%;
+}
+
+.container .form .telefone {
+    font-size: 15px;
+    width: 85%;
+}
+
+.container .form .mensagem {
+    font-size: 15px;
+    width: 85%;
+}
+
+.container .form .obrigatorio {
+    color: #F52E2E;
+    font-weight: 400;
+    font-size: 8px;
+    display: none;
+}
+
+.container .form span {
+    font-size: 15px;
+    margin-bottom: 20px;
+    align-self: flex-start;
+    margin-left: 25px;
+}
+
+.container .form .botao {
+    padding: 10px;
+    font-size: 15px;
+    color: #FFFFFF;
+    background-color: #3CCC87;
+    border-radius: 5px;
+    width: 75%;
+    align-self: flex-start;
+    margin-left: 25px;
+    cursor: pointer;
+}
+
+.input-container {
+    width: 85%;
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.input-container input,
+.input-container textarea {
+    font-size: 15px;
+    width: 100%;
+}
+
+.form .input-container .obrigatorio {
+    color: #F52E2E;
+    font-weight: 400;
+    font-size: 8px;
+    position: absolute;
+    bottom: -30px;
+    left: -25px;
+    display: none;
+}
+
+.form .input-container .mensagem {
+    margin-bottom: -5px;
+}
+
+.form .input-container.show .obrigatorio {
+    display: block;
+}
+
+.form .input-container .obrigatorio {
+    display: none;
+}
+
+@media (max-width: 768px) {
+
+    body {
+        flex-direction: column;
+        justify-content: flex-start;
+        height: auto;
+        padding: 20px;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 100%;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 50px;
+    }
+
+    .container .duvida {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .container .duvida h1,
+    .container .duvida h2 {
+        font-size: 1rem; /* Ajuste o tamanho da fonte para telas menores */
+    }
+
+    .container .form {
+        width: 100%;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .container .form .input-container {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .container .form span {
+        align-self: flex-start;
+        margin-left: 5px;
+    }
+
+    .container .form .botao {
+        width: 85%;
+        margin-left: 1px;
+    }
+}

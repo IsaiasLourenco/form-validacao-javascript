@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio de JavaScript - Formulário com Validação</title>
+    <meta name="description"
+        content="Desafio de JavaScript para criar um formulário com validação de entrada. Aprenda como validar dados de formulários usando JavaScript e HTML5.">
+    <meta name="author" content="Isaias Lourenço">
+    <meta name="keywords" content="JavaScript, Formulário, Validação, HTML, CSS, Programação, Desafio">
+    <link rel="icon" type="image/png" sizes="32x32" href="./src/images/form.ico">
+    <link rel="stylesheet" href="./src/css/reset.css">
+    <link rel="stylesheet" href="./src/css/styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+</head>
+</head>
+
+<body>
+    <div class="container">
+        <div class="duvida">
+            <h1>FICOU COM DÚVIDA? <br> NOS MANDE UMA MENSAGEM!</h1>
+            <h2>caso tenha ficado com qualquer dúvida basta nos mandar uma mensagem e entraremos em contato em menos de
+                24h.</h2>
+        </div>
+        <div class="form">
+            <div class="input-container">
+                <input type="text" name="nome" class="nome" placeholder="Nome Completo *">
+                <span class="obrigatorio">campo obrigatório</span>
+            </div>
+            <div class="input-container">
+                <input type="text" name="email" class="email" placeholder="Email *">
+                <span class="obrigatorio">campo obrigatório</span>
+            </div>
+            <div class="input-container">
+                <input type="text" name="telefone"  id="telefone" class="telefone" placeholder="Telefone *">
+                <span class="obrigatorio">campo obrigatório</span>
+            </div>
+            <div class="input-container">
+                <textarea name="mensagem" class="mensagem" placeholder="Mensagem *" rows="6"></textarea>
+                <span class="obrigatorio">campo obrigatório</span>
+            </div>
+            <span>*Campos obrigatórios</span>
+            <button class="botao">Enviar</button>
+        </div>
+    </div>
+    <script type="text/javascript" src="./src/js/mascaras.js"></script>
+    <script type="text/javascript" src="./src/js/validar.js"></script>
+</body>
+
+</html> 
