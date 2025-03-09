@@ -70,6 +70,7 @@ body {
 .container .form .mensagem {
     font-size: 15px;
     width: 85%;
+    resize: none;
 }
 
 .container .form .obrigatorio {

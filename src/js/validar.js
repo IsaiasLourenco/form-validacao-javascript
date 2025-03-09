@@ -1,63 +1,5 @@
-// // const inputs = document.querySelectorAll(".input-container");
-
-// // inputs.forEach(input => {
-// //     input.addEventListener("click", function () {
-// //         const teste = input.value.trim()
-// //         if (input.value.trim() !== "") {
-// //             input.style.border = "2px solid green";
-// //         } else {
-// //             input.style.border = "2px solid red";
-// //         }
-// //     });
-// // });
-
-// // const inputs = document.querySelectorAll(".input-container input, .input-container textarea");
-
-// // inputs.forEach(input => {
-// //     input.addEventListener("click", function () {
-// //         if (input.value.trim() !== "") {
-// //             input.style.border = "2px solid green";
-// //             input.nextElementSibling.style.display = "none";
-// //         } else {
-// //             input.style.border = "2px solid red";
-// //             input.nextElementSibling.style.display = "block";
-// //         }
-// //     });
-// // });
-
-// const inputs = document.querySelectorAll(".input-container input, .input-container textarea");
-// const botaoEnviar = document.querySelector(".botao");
-// const campoNome = document.querySelector("input[name='nome']");
-
-// botaoEnviar.addEventListener("click", function(event) {
-//     event.preventDefault(); // Evita o envio do formulário até que a validação esteja completa
-    
-//     let formValido = true;
-    
-//     inputs.forEach(input => {
-//         if (input.value.trim() !== "") {
-//             input.style.border = "2px solid green";
-//             input.nextElementSibling.style.display = "none"; 
-//         } else {
-//             input.style.border = "2px solid red";
-//             input.nextElementSibling.style.display = "block";
-//             formValido = false;
-//         }
-//     });
-
-//     if (formValido) {
-//         // Se todos os campos estão preenchidos, o formulário pode ser enviado
-//         alert("Formulário enviado com sucesso!");
-//     } else {
-//         alert("Por favor, preencha todos os campos obrigatórios.");
-//         campoNome.focus();
-//     }
-// });
-
 const inputs = document.querySelectorAll(".input-container input, .input-container textarea");
 const botaoEnviar = document.querySelector(".botao");
-const campoNome = document.querySelector("input[name='nome']");
-const campoEmail = document.querySelector("input[name='email']");
 
 function validarEmail(email) {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -68,6 +10,7 @@ botaoEnviar.addEventListener("click", function(event) {
     event.preventDefault(); 
     
     let formValido = true;
+    let primeiroCampoInvalido = null; // Armazena o primeiro campo que precisa ser preenchido
     
     inputs.forEach(input => {
         if (input.value.trim() !== "") {
@@ -75,6 +18,7 @@ botaoEnviar.addEventListener("click", function(event) {
                 input.style.border = "2px solid red";
                 input.nextElementSibling.style.display = "block"; 
                 formValido = false;
+                if (!primeiroCampoInvalido) primeiroCampoInvalido = input; // Define o primeiro campo inválido
                 alert("Por favor, preencha o email no formato correto, usando --algo@seuservidordeemal.com.");
             } else {
                 input.style.border = "2px solid green";
@@ -84,14 +28,14 @@ botaoEnviar.addEventListener("click", function(event) {
             input.style.border = "2px solid red";
             input.nextElementSibling.style.display = "block";
             formValido = false;
+            if (!primeiroCampoInvalido) primeiroCampoInvalido = input; // Define o primeiro campo inválido
         }
     });
 
     if (formValido) {
-        
         alert("Formulário enviado com sucesso!");
     } else {
         alert("Por favor, preencha todos os campos obrigatórios.");
-        campoNome.focus();
+        if (primeiroCampoInvalido) primeiroCampoInvalido.focus(); // Foca no primeiro campo inválido
     }
 });
